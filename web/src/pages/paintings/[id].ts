@@ -33,7 +33,7 @@ export default async function handler(
       });
       return res.status(200).json(updatedPainting);
     } catch (error) {
-      return res.status(500).json({ error: "Error updating painting" });
+      return res.status(500).json({ error: "Error updating paintings" });
     }
   } else if (req.method === "DELETE") {
     try {
