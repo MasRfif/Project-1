@@ -25,9 +25,8 @@ app.get("/paintings/:id", async (req, res) => {
   const { id } = req.params;
 
   try {
-    // Find the painting by ID
     const painting = await prisma.painting.findUnique({
-      where: { id: parseInt(id) }, // Prisma expects the ID to be an integer
+      where: { id: parseInt(id) },
     });
 
     if (!painting) {
@@ -36,7 +35,7 @@ app.get("/paintings/:id", async (req, res) => {
 
     res.json(painting);
   } catch (error) {
-    res.status(500).json({ error: "Error fetching painting" });
+    res.status(500).json({ error: "Error fetching data" });
   }
 });
 
