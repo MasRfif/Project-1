@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface Painting {
   id: number;
@@ -78,10 +79,12 @@ export default function PaintingForm() {
             <div className="border border-gray-300 p-2 rounded-md">
               <div className="flex flex-col items-center">
                 <div className="w-40 h-40 overflow-hidden rounded-lg mb-2">
-                  <img
+                  <Image
                     src={painting.thumbnail}
                     alt={painting.name}
                     className="w-full h-full object-cover"
+                    width={300}
+                    height={300}
                   />
                 </div>
 
@@ -132,10 +135,12 @@ export default function PaintingForm() {
               />
 
               {thumbnail && (
-                <img
+                <Image
                   src={thumbnail}
                   alt="Uploaded Image"
                   className="w-full h-64 object-cover mt-4"
+                  width={300}
+                  height={300}
                 />
               )}
             </label>
@@ -211,10 +216,12 @@ export default function PaintingForm() {
               />
             </svg>
           </button>
-          <img
+          <Image
             src={selectedPainting.thumbnail}
             alt={selectedPainting.name}
             className="w-full h-40 object-cover rounded-md"
+            width={300}
+            height={300}
           />
           <h3 className="text-lg font-semibold mt-2">
             {selectedPainting.name}

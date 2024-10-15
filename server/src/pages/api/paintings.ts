@@ -21,6 +21,7 @@ export default async function handler(
       });
       return res.status(201).json(newPainting);
     } catch (error) {
+      console.error("Error creating painting:", error);
       return res.status(500).json({ error: "Error creating painting" });
     }
   } else if (req.method === "GET") {
@@ -28,6 +29,7 @@ export default async function handler(
       const paintings = await prisma.painting.findMany();
       return res.status(200).json(paintings);
     } catch (error) {
+      console.error("Error fetching paintings:", error);
       return res.status(500).json({ error: "Error fetching paintings" });
     }
   } else {
