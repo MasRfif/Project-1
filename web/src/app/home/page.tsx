@@ -1,5 +1,4 @@
 import PaintingForm from "@/components/PaintingForm";
-
 export default function Home() {
   return (
     <div>
