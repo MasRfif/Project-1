@@ -128,7 +128,7 @@ export default function PaintingForm() {
               <input
                 id="dropzone-file"
                 type="file"
-                className="hidden"
+                className="hidden "
                 onChange={(e) => handleImageUpload(e, setThumbnail)}
               />
               {thumbnail && (
@@ -140,6 +140,7 @@ export default function PaintingForm() {
                   height={300}
                 />
               )}
+              <p className="text-2xl">Click here to add your image here</p>
             </label>
           </div>
           <div>
