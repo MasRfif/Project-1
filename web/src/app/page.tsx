@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Home = () => {
   return (
     <div>
@@ -5,9 +7,7 @@ const Home = () => {
         Wellcome To Gallery Input Page
       </h1>
       click here to start Producing
-      <Button>
-        <Link href="/home">Painting</Link>
-      </Button>
+      <Link href="/home">Painting</Link>
     </div>
   );
 };
