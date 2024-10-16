@@ -2,13 +2,13 @@ import express from "express";
 import paintingRoutes from "./routes/post-routes";
 import cors from "cors";
 
-const PORT = process.env.PORT || 5000;
+const PORT = 80;
 const app = express();
 
 // Use CORS middleware before routes
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "gallery-beige-ten.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type"],
     credentials: true,

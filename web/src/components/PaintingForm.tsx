@@ -27,7 +27,9 @@ export default function PaintingForm() {
   useEffect(() => {
     const fetchPaintings = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/paintings");
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/paintings`
+        );
         if (!response.ok) throw new Error(`Error: ${response.status}`);
         const data = await response.json();
         setPaintings(data);
@@ -46,13 +48,16 @@ export default function PaintingForm() {
     const newPainting = { name, thumbnail, description, price, imageUrl };
 
     try {
-      const response = await fetch("http://localhost:5000/api/paintings", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newPainting),
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/paintings`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newPainting),
+        }
+      );
 
       if (!response.ok) {
         const errorMessage = await response.text(); // Get the error message from the response
