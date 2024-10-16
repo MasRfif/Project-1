@@ -10,7 +10,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = env("DATABASE_URL")
+  url      = "mysql://naufal:21534687A_@database-painting-2.czes0se4uvm9.ap-southeast-1.rds.amazonaws.com:3306/paintings"
 }
 
 model Painting {
